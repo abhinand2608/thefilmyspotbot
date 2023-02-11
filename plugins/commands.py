@@ -255,7 +255,7 @@ async def start(client, message):
                     InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
                 ]]
                 await message.reply_text(
-                    text="<b>You are not verified !\nKindly verify to continue !</b>",
+                    text="<b>You are not verified ❌\nKindly verify to continue ❗</b>",
                     protect_content=True,
                     reply_markup=InlineKeyboardMarkup(btn)
                 )
@@ -306,7 +306,7 @@ async def start(client, message):
             InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
         ]]
         await message.reply_text(
-            text="<b>You are not verified !\nKindly verify to continue !</b>",
+            text="<b>You are not verified ❌\nKindly verify to continue ❗</b>",
             protect_content=True,
             reply_markup=InlineKeyboardMarkup(btn)
         )
@@ -587,7 +587,7 @@ async def settings(client, message):
             ],
             [
                 InlineKeyboardButton(
-                    'ShortLink',
+                    'ShortLink 🖇️',
                     callback_data=f'setgs#is_shortlink#{settings["is_shortlink"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
@@ -678,16 +678,16 @@ async def requests(bot, message):
         try:
             if REQST_CHANNEL is not None:
                 btn = [[
-                        InlineKeyboardButton('View Request', url=f"{message.reply_to_message.link}"),
-                        InlineKeyboardButton('Show Options', callback_data=f'show_option#{reporter}')
+                        InlineKeyboardButton('View Request 👀', url=f"{message.reply_to_message.link}"),
+                        InlineKeyboardButton('Show Options 🗿', callback_data=f'show_option#{reporter}')
                       ]]
                 reported_post = await bot.send_message(chat_id=REQST_CHANNEL, text=f"<b>𝖱𝖾𝗉𝗈𝗋𝗍𝖾𝗋 : {mention} ({reporter})\n\n𝖬𝖾𝗌𝗌𝖺𝗀𝖾 : {content}</b>", reply_markup=InlineKeyboardMarkup(btn))
                 success = True
             elif len(content) >= 3:
                 for admin in ADMINS:
                     btn = [[
-                        InlineKeyboardButton('View Request', url=f"{message.reply_to_message.link}"),
-                        InlineKeyboardButton('Show Options', callback_data=f'show_option#{reporter}')
+                        InlineKeyboardButton('View Request 👀', url=f"{message.reply_to_message.link}"),
+                        InlineKeyboardButton('Show Options 🗿', callback_data=f'show_option#{reporter}')
                       ]]
                     reported_post = await bot.send_message(chat_id=admin, text=f"<b>𝖱𝖾𝗉𝗈𝗋𝗍𝖾𝗋 : {mention} ({reporter})\n\n𝖬𝖾𝗌𝗌𝖺𝗀𝖾 : {content}</b>", reply_markup=InlineKeyboardMarkup(btn))
                     success = True
@@ -713,16 +713,16 @@ async def requests(bot, message):
         try:
             if REQST_CHANNEL is not None and len(content) >= 3:
                 btn = [[
-                        InlineKeyboardButton('View Request', url=f"{message.link}"),
-                        InlineKeyboardButton('Show Options', callback_data=f'show_option#{reporter}')
+                        InlineKeyboardButton('View Request 👀', url=f"{message.link}"),
+                        InlineKeyboardButton('Show Options 🗿', callback_data=f'show_option#{reporter}')
                       ]]
                 reported_post = await bot.send_message(chat_id=REQST_CHANNEL, text=f"<b>𝖱𝖾𝗉𝗈𝗋𝗍𝖾𝗋 : {mention} ({reporter})\n\n𝖬𝖾𝗌𝗌𝖺𝗀𝖾 : {content}</b>", reply_markup=InlineKeyboardMarkup(btn))
                 success = True
             elif len(content) >= 3:
                 for admin in ADMINS:
                     btn = [[
-                        InlineKeyboardButton('View Request', url=f"{message.link}"),
-                        InlineKeyboardButton('Show Options', callback_data=f'show_option#{reporter}')
+                        InlineKeyboardButton('View Request 👀', url=f"{message.link}"),
+                        InlineKeyboardButton('Show Options 🗿', callback_data=f'show_option#{reporter}')
                       ]]
                     reported_post = await bot.send_message(chat_id=admin, text=f"<b>𝖱𝖾𝗉𝗈𝗋𝗍𝖾𝗋 : {mention} ({reporter})\n\n𝖬𝖾𝗌𝗌𝖺𝗀𝖾 : {content}</b>", reply_markup=InlineKeyboardMarkup(btn))
                     success = True
@@ -740,9 +740,9 @@ async def requests(bot, message):
     
     if success:
         btn = [[
-                InlineKeyboardButton('View Request', url=f"{reported_post.link}")
+                InlineKeyboardButton('View Request 👀', url=f"{reported_post.link}")
               ]]
-        await message.reply_text("<b>Your request has been added! Please wait for some time.</b>", reply_markup=InlineKeyboardMarkup(btn))
+        await message.reply_text("<b>Your request has been added! Please wait for some time ⏳</b>", reply_markup=InlineKeyboardMarkup(btn))
 
         
 @Client.on_message(filters.command("send") & filters.user(ADMINS))
@@ -775,29 +775,29 @@ async def send_msg(bot, message):
 async def deletemultiplefiles(bot, message):
     chat_type = message.chat.type
     if chat_type != enums.ChatType.PRIVATE:
-        return await message.reply_text(f"<b>Hey {message.from_user.mention}, This command won't work in groups. It only works on my PM !</b>")
+        return await message.reply_text(f"<b>Hey {message.from_user.mention}, This command only works on my PM !</b>")
     else:
         pass
     try:
         keyword = message.text.split(" ", 1)[1]
     except:
         return await message.reply_text(f"<b>Hey {message.from_user.mention}, Give me a keyword along with the command to delete files.</b>")
-    k = await bot.send_message(chat_id=message.chat.id, text=f"<b>Fetching Files for your query {keyword} on DB... Please wait...</b>")
+    k = await bot.send_message(chat_id=message.chat.id, text=f"<b>Fetching Files for  {keyword} on DataBase... Please wait...</b>")
     files, next_offset, total = await get_bad_files(keyword)
-    await k.edit_text(f"<b>Found {total} files for your query {keyword} !\n\nFile deletion process will start in 5 seconds !</b>")
+    await k.edit_text(f"<b>Found {total} files for {keyword} !\n\nFile deletion will start in 5 seconds !</b>")
     await asyncio.sleep(5)
     deleted = 0
     for file in files:
-        await k.edit_text(f"<b>Process started for deleting files from DB. Successfully deleted {str(deleted)} files from DB for your query {keyword} !\n\nPlease wait...</b>")
+        await k.edit_text(f"<b>Started for deleting files from DataBase. \nSuccessfully deleted {str(deleted)} files for {keyword} !\n\nPlease wait...</b>")
         file_ids = file.file_id
         file_name = file.file_name
         result = await Media.collection.delete_one({
             '_id': file_ids,
         })
         if result.deleted_count:
-            logger.info(f'File Found for your query {keyword}! Successfully deleted {file_name} from database.')
+            logger.info(f'File Found for {keyword}! Successfully deleted {file_name} from database.')
         deleted += 1
-    await k.edit_text(text=f"<b>Process Completed for file deletion !\n\nSuccessfully deleted {str(deleted)} files from database for your query {keyword}.</b>")
+    await k.edit_text(text=f"<b>File Deletion Completed!\n\nSuccessfully deleted {str(deleted)} for {keyword}.</b>")
 
 @Client.on_message(filters.command("shortlink") & filters.user(ADMINS))
 async def shortlink(bot, message):
