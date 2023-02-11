@@ -101,7 +101,7 @@ async def answer(bot, query):
                            is_personal = True,
                            cache_time=cache_time,
                            switch_pm_text=switch_pm_text,
-                           switch_pm_parameter="Okey,")
+                           switch_pm_parameter="Okey")
 
 
 def get_reply_markup(query):
