@@ -10,3 +10,5 @@ git+https://github.com/Joelkb/cinemagoer
 datetime
 pytz
 aiohttp
+ujson
+pyshorteners
