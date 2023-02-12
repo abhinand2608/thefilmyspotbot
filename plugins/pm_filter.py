@@ -565,7 +565,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                              [
                               InlineKeyboardButton(" Our ReQuesting Group", url=GRP_LNK)
                            ],[
-                              InlineKeyboardButton("DOWNLOAD EXTERNALLY 🌐", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+                              InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
                              ]
                             ]
                         )
@@ -612,11 +612,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
                  [
                   InlineKeyboardButton('Our ReQuesting Group', url=GRP_LNK),
                ],[
-                  InlineKeyboardButton("DOWNLOAD EXTERNALLY 🌐", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+                 InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
                  ]
                 ]
             )
         )
+                  
     elif query.data == "pages":
         await query.answer()
 
