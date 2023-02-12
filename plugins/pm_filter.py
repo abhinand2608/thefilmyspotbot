@@ -565,7 +565,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                              [
                               InlineKeyboardButton(" Our ReQuesting Group", url=GRP_LNK)
                            ],[
-                              InlineKeyboardButton("Updates Channel 📢", url=CHNL_LNK)
+                              InlineKeyboardButton("DOWNLOAD EXTERNALLY 🌐", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
+
                              ]
                             ]
                         )
@@ -612,7 +613,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                  [
                   InlineKeyboardButton('Our ReQuesting Group', url=GRP_LNK),
                ],[
-                  InlineKeyboardButton("Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ 📢", url=CHNL_LNK)
+                  InlineKeyboardButton("DOWNLOAD EXTERNALLY 🌐", url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}")
                  ]
                 ]
             )
@@ -1372,8 +1373,8 @@ async def auto_filter(client, msg, spoll=False):
         else:
             btn.insert(0, 
                 [
-                    InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
+                    InlineKeyboardButton(f'INFO ⚠️', 'reqinfo'),
+                    InlineKeyboardButton(f'HELP 📍', 'minfo')
                 ]
             )
                 
