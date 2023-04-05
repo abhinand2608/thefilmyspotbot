@@ -1,5 +1,5 @@
 {
-    "name": "DQ-The-File-Donor",
+    "name": "𝐭𝐡𝐞𝐟𝐢𝐥𝐦𝐲𝐬𝐩𝐨𝐭",
     "description": "When you going to send file on telegram channel this bot will save that in database, So you can search that easily in inline mode",
     "stack": "container",
     "keywords": [
@@ -15,8 +15,8 @@
       "index",
       "inline"
     ],
-    "website": "https://github.com/Joelkb/DQ-the-file-donor",
-    "repository": "https://github.com/Joelkb/DQ-the-file-donor",
+    "website": "https://github.com/abhinand2608/thefilmyspotbot",
+    "repository": "https://github.com/abhinand2608/thefilmyspotbot",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",
@@ -75,7 +75,7 @@
     "formation": {
         "worker": {
             "quantity": 1,
-            "size": "free"
+            "size": "eco"
         }
     }
 }
