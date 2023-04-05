@@ -1650,11 +1650,8 @@ async def advantage_spell_chok(client, msg):
             if settings['auto_delete']:
                 await asyncio.sleep(600)
                 await spell_check_del.delete()
-
-
-
                 except Exception as e:
-                    logger.exception(e)
+                logger.exception(e)
                 break
     else:
         return False
