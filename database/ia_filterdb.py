@@ -124,7 +124,7 @@ async def get_search_results(chat_id, query, file_type=None, max_results=10, off
 
     return files, next_offset, total_results
 
-async def get_bad_files(query, file_type=None, filter=False):
+aasync def get_bad_files(query, file_type=None, filter=False):
     """For given query return (results, next_offset)"""
     query = query.strip()
     #if filter:
@@ -158,7 +158,6 @@ async def get_bad_files(query, file_type=None, filter=False):
     cursor.sort('$natural', -1)
     # Get list of files
     files = await cursor.to_list(length=total_results)
-
     return files, total_results
 async def get_file_details(query):
     filter = {'file_id': query}
