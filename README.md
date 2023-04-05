@@ -2,7 +2,6 @@
   <img src="https://telegra.ph/file/075948dea539e8ceecf87.jpg" alt="𝐭𝐡𝐞𝐟𝐢𝐥𝐦𝐲𝐬𝐩𝐨𝐭">
 </p>
 <h1 align="center">
-
  𝐭𝐡𝐞𝐟𝐢𝐥𝐦𝐲𝐬𝐩𝐨𝐭 💎
 </h1>
 
@@ -122,7 +121,6 @@
 </a>
 </p>
 </details>
-
 <details><summary>Deploy To Heroku Via Bot</summary>
 <p>
 <br>
@@ -134,7 +132,6 @@
 
 <details><summary>Deploy To Koyeb</summary>
 <b>The fastest way to deploy the application is to click the Deploy to Koyeb button below.</b>
-
 
 [![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/abhinand2608/thefilmyspotbot&branch=web&name=dqthefiledonor)
 </details>
@@ -167,8 +164,8 @@ python3 bot.py
 
 ## Thanks to 
  - Thanks To Dan For His Awesome [Library](https://github.com/pyrogram/pyrogram)
- - Thanks To Mahesh For His Awesome [Mᴇᴅɪᴀ-Sᴇᴀʀᴄʜ-Bᴏᴛ](https://github.com/Mahesh0253/Media-Search-bot)
- - Thanks To [Trojanz](https://github.com/trojanzhex) for Their Awesome [Uɴʟɪᴍɪᴛᴇᴅ Fɪʟᴛᴇʀ Bᴏᴛ](https://github.com/TroJanzHEX/Unlimited-Filter-Bot) And [Aᴜᴛᴏ Fɪʟᴛᴇʀ Bᴏᴛ](https://github.com/trojanzhex/auto-filter-bot)
+ - Thanks To Mahesh For His Awesome [Media-Search-bot](https://github.com/Mahesh0253/Media-Search-bot)
+ - Thanks To [Trojanz](https://github.com/trojanzhex) for Their Awesome [Unlimited Filter Bot](https://github.com/TroJanzHEX/Unlimited-Filter-Bot) And [AutoFilterBoT](https://github.com/trojanzhex/auto-filter-bot)
  - Thanks To All Everyone In This Journey
  - Thanks To [EvamariaTG](https://raw.githubusercontent.com/EvamariaTG) for their awesome [EvaMaria Bot](https://raw.githubusercontent.com/EvamariaTG/EvaMaria)
  - Thanks To [Joelkb](https://github.com/Joelkb) who have edited and modified this repo as now it is. (It's me 😂)
