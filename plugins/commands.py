@@ -775,13 +775,13 @@ async def send_msg(bot, message):
 async def deletemultiplefiles(bot, message):
     chat_type = message.chat.type
     if chat_type != enums.ChatType.PRIVATE:
-        return await message.reply_text(f"<b>Hey {message.from_user.mention}, This command only works on my PM !</b>")
-    else:
+        return await message.reply_text(f"<b>Hey {message.from_user.mention}, This command won't work in groups. It only works on my PM !</b>")
         pass
     try:
         keyword = message.text.split(" ", 1)[1]
     except:
         return await message.reply_text(f"<b>Hey {message.from_user.mention}, Give me a keyword along with the command to delete files.</b>")
+
     btn = [[
        InlineKeyboardButton("Yes, Continue !", callback_data=f"killfilesdq#{keyword}")
        ],[
@@ -792,6 +792,7 @@ async def deletemultiplefiles(bot, message):
         reply_markup=InlineKeyboardMarkup(btn),
         parse_mode=enums.ParseMode.HTML
     )
+
 @Client.on_message(filters.command("shortlink") & filters.user(ADMINS))
 async def shortlink(bot, message):
     chat_type = message.chat.type
