@@ -124,7 +124,7 @@ async def get_search_results(chat_id, query, file_type=None, max_results=10, off
 
     return files, next_offset, total_results
 
-aasync def get_bad_files(query, file_type=None, filter=False):
+async def get_bad_files(query, file_type=None, filter=False):
     """For given query return (results, next_offset)"""
     query = query.strip()
     #if filter:
