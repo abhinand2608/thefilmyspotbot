@@ -152,13 +152,15 @@ aasync def get_bad_files(query, file_type=None, filter=False):
         filter['file_type'] = file_type
 
     total_results = await Media.count_documents(filter)
-    
+
     cursor = Media.find(filter)
     # Sort by recent
     cursor.sort('$natural', -1)
     # Get list of files
     files = await cursor.to_list(length=total_results)
+
     return files, total_results
+
 async def get_file_details(query):
     filter = {'file_id': query}
     cursor = Media.find(filter)
