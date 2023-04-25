@@ -1576,19 +1576,19 @@ async def auto_filter(client, msg, spoll=False):
 
 
 async def advantage_spell_chok(client, msg):
-mv_id = msg.id
-mv_rqst = msg.text
-reqstr1 = msg.from_user.id if msg.from_user else 0
-reqstr = await client.get_users(reqstr1)
-settings = await get_settings(msg.chat.id)
-query = re.sub(
-r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|br((o|u)h?)*|^h(e|a)?(l)*(o)*|mal(ayalam)?|t(h)?amil|file|that|find|und(o)*|kit(t(i|y)?)?o(w)?|thar(u)?(o)*w?|kittum(o)*|aya(k)*(um(o)*)?|full\smovie|any(one)|with\ssubtitle(s)?)",
-    "", msg.text, flags = re.IGNORECASE) # plis contribute some common words
-query = query.strip() + " movie"
-try:
-movies = await get_poster(mv_rqst, bulk = True)
-except Exception as e:
-logger.exception(e)
+    mv_id = msg.id
+    mv_rqst = msg.text
+    reqstr1 = msg.from_user.id if msg.from_user else 0
+    reqstr = await client.get_users(reqstr1)
+    settings = await get_settings(msg.chat.id)
+    query = re.sub(
+        r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|br((o|u)h?)*|^h(e|a)?(l)*(o)*|mal(ayalam)?|t(h)?amil|file|that|find|und(o)*|kit(t(i|y)?)?o(w)?|thar(u)?(o)*w?|kittum(o)*|aya(k)*(um(o)*)?|full\smovie|any(one)|with\ssubtitle(s)?)",
+        "", msg.text, flags = re.IGNORECASE) # plis contribute some common words
+    query = query.strip() + " movie"
+    try:
+        movies = await get_poster(mv_rqst, bulk = True)
+    except Exception as e:
+    logger.exception(e)
 reqst_gle = mv_rqst.replace(" ", "+")
 button = [[
     InlineKeyboardButton("Gᴏᴏɢʟᴇ", url = f"https://www.google.com/search?q= {
