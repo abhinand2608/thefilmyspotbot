@@ -283,7 +283,7 @@ async def next_page(bot, query):
     await query.answer()
 
 @Client.on_callback_query(filters.regex(r"^lang")) 
- async def language_check(bot, query): 
+async def language_check(bot, query): 
      _, userid, language = query.data.split("#") 
      if int(userid) not in [query.from_user.id, 0]: 
          return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=True) 
