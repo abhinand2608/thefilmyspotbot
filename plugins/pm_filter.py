@@ -419,11 +419,11 @@ async def language_check(bot, query):
     else:
         return await query.answer(f"Sᴏʀʀʏ, Nᴏ ғɪʟᴇs ғᴏᴜɴᴅ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {movie}.", show_alert=True)
     
-@Client.on_callback_query(filters.regex(r"^select_lang")) 
-async def select_language(bot, query): 
-     _, userid = query.data.split("#") 
-     if int(userid) not in [query.from_user.id, 0]: 
-         return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=True)
+@Client.on_callback_query(filters.regex(r"^select_lang"))
+async def select_language(bot, query):
+    _, userid = query.data.split("#")
+    if int(userid) not in [query.from_user.id, 0]:
+        return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=True)
     btn = [[
         InlineKeyboardButton("Sᴇʟᴇᴄᴛ Yᴏᴜʀ Dᴇꜱɪʀᴇᴅ Lᴀɴɢᴜᴀɢᴇ ↓", callback_data=f"lang#{userid}#unknown")
     ],[
@@ -448,7 +448,7 @@ async def select_language(bot, query):
     except MessageNotModified:
         pass
     await query.answer()
-
+        
 @Client.on_callback_query(filters.regex(r"^spol"))
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
