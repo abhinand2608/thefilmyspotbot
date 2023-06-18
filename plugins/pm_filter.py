@@ -281,19 +281,20 @@ async def next_page(bot, query):
     except MessageNotModified:
         pass
     await query.answer()
-@Client.on_callback_query(filters.regex(r"^lang"))
-async def language_check(bot, query):
-    _, userid, language = query.data.split("#")
-    if int(userid) not in [query.from_user.id, 0]:
-        return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=True)
-    if language == "unknown":
-        return await query.answer("Sᴇʟᴇᴄᴛ ᴀɴʏ ʟᴀɴɢᴜᴀɢᴇ ғʀᴏᴍ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴs !", show_alert=True)
-    movie = temp.KEYWORD.get(query.from_user.id)
-    if not movie:
-        return await query.answer(script.OLD_ALRT_TXT.format(query.from_user.first_name), show_alert=True)
-    if language != "home":
-        movie = f"{movie} {language}"
-    files, offset, total_results = await get_search_results(query.message.chat.id, movie, offset=0, filter=True)
+
+@Client.on_callback_query(filters.regex(r"^lang")) 
+ async def language_check(bot, query): 
+     _, userid, language = query.data.split("#") 
+     if int(userid) not in [query.from_user.id, 0]: 
+         return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=True) 
+     if language == "unknown": 
+         return await query.answer("Sᴇʟᴇᴄᴛ ᴀɴʏ ʟᴀɴɢᴜᴀɢᴇ ғʀᴏᴍ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴs !", show_alert=True) 
+     movie = temp.KEYWORD.get(query.from_user.id) 
+     if not movie: 
+         return await query.answer(script.OLD_ALRT_TXT.format(query.from_user.first_name), show_alert=True) 
+     if language != "home": 
+         movie = f"{movie} {language}" 
+     files, offset, total_results = await get_search_results(query.message.chat.id, movie, offset=0, filter=True)
     if files:
         settings = await get_settings(query.message.chat.id)
         temp.SEND_ALL_TEMP[query.from_user.id] = files
@@ -417,11 +418,11 @@ async def language_check(bot, query):
     else:
         return await query.answer(f"Sᴏʀʀʏ, Nᴏ ғɪʟᴇs ғᴏᴜɴᴅ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {movie}.", show_alert=True)
     
-@Client.on_callback_query(filters.regex(r"^select_lang"))
-async def select_language(bot, query):
-    _, userid = query.data.split("#")
-    if int(userid) not in [query.from_user.id, 0]:
-        return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=True)
+@Client.on_callback_query(filters.regex(r"^select_lang")) 
+ async def select_language(bot, query): 
+     _, userid = query.data.split("#") 
+     if int(userid) not in [query.from_user.id, 0]: 
+         return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=True)
     btn = [[
         InlineKeyboardButton("Sᴇʟᴇᴄᴛ Yᴏᴜʀ Dᴇꜱɪʀᴇᴅ Lᴀɴɢᴜᴀɢᴇ ↓", callback_data=f"lang#{userid}#unknown")
     ],[
