@@ -89,32 +89,37 @@ ID - <code>{}</code>
 Name - {}
 """
     ALRT_TXT = """Hey {} 🙂,
-ᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,
-ʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...
+This Is Not Your Requested Things 😤
+Please Request Yourself With Movie Name & Send In This Group 🙂🙏🏼
 """
 
-    OLD_ALRT_TXT = """ʜᴇʏ {},
-ʏᴏᴜ ᴀʀᴇ ᴜꜱɪɴɢ ᴏɴᴇ ᴏꜰ ᴍʏ ᴏʟᴅ ᴍᴇꜱꜱᴀɢᴇꜱ, 
-ᴘʟᴇᴀꜱᴇ ꜱᴇɴᴅ ᴛʜᴇ ʀᴇQᴜᴇꜱᴛ ᴀɢᴀɪɴ.
+    OLD_ALRT_TXT = """Hey {} 🙂,
+This Is Your Old/Expired Request , 
+Please Request Again 🙏🏼.
 """
 
-    CUDNT_FND = """ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏᴛʜɪɴɢ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ {}
-ᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏꜰ ᴛʜᴇꜱᴇ?
-"""
-
-
-    I_CUDNT = """ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ {}
+    CUDNT_FND = """ Not Found Anything Related To {}
+Please Check The Spelling On Google ....
+Choose Any Suggested Title Listed Below ! 👇🏼
 """
 
 
-    I_CUD_NT = """ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ {}.
-ᴘʟᴇᴀꜱᴇ ᴄʜᴇᴄᴋ ᴛʜᴇ ꜱᴘᴇʟʟɪɴɢ ᴏɴ ɢᴏᴏɢʟᴇ ᴏʀ ɪᴍᴅʙ...
+    I_CUDNT = """Not Found Anything Related To {}
+
+Please Check The Title Is Digitally Released Or Check Spelling ....
 """
 
-    MVE_NT_FND = """ᴍᴏᴠɪᴇ ɴᴏᴛ ꜰᴏᴜɴᴅ ɪɴ ᴅᴀᴛᴀʙᴀꜱᴇ...
+
+    I_CUD_NT = """Not Found Anything Related To {}
+
+Please Check The Title Is Digitally Released Or Check Spelling ....
 """
 
-    TOP_ALRT_MSG = """𝐂𝐡𝐞𝐜𝐤𝐢𝐧𝐠 𝐟𝐨𝐫 𝐦𝐨𝐯𝐢𝐞 𝐢𝐧 𝐭𝐡𝐞𝐟𝐢𝐥𝐦𝐲𝐬𝐩𝐨𝐭 𝐝𝐚𝐭𝐚𝐛𝐚𝐬𝐞...
+    MVE_NT_FND = """ {} Is Not Available On 𝐭𝐡𝐞𝐟𝐢𝐥𝐦𝐲𝐬𝐩𝐨𝐭 Database...
+Please Check The Title Is Digitally Released Or Check Spelling....
+"""
+
+    TOP_ALRT_MSG = """𝐂𝐡𝐞𝐜𝐤𝐢𝐧𝐠 𝐟𝐨𝐫 𝐦𝐨𝐯𝐢𝐞 𝐢𝐧 𝐭𝐡𝐞𝐟𝐢𝐥𝐦𝐲𝐬𝐩𝐨𝐭 𝐝𝐚𝐭𝐚𝐛𝐚𝐬𝐞 📀🗂️
 """
 
 
@@ -145,7 +150,7 @@ THANKS FOR JOINING &
 
 Movie : Kgf Chapter 2 2022 Tamil
 Series : Breaking Bad s01e14
-🚯 Never Use These╭⁠☞ ':(!,./)"""
+🚯 Never Use These Any Symbols !"""
 
     RESTART_TXT = """
 
