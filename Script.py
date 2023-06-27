@@ -98,17 +98,21 @@ This Is Your Old/Expired Request ,
 Please Request Again 🙏🏼.
 """
 
-    CUDNT_FND = """ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏᴛʜɪɴɢ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ {}
-ᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏꜰ ᴛʜᴇꜱᴇ?
+    CUDNT_FND = """ Not Found Anything Related To {}
+Please Check The Spelling On Google ....
+Choose Any Suggested Title Listed Below ! 👇🏼
 """
 
 
-    I_CUDNT = """ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ {}
+    I_CUDNT = """Not Found Anything Related To {}
+
+Please Check The Title Is Digitally Released Or Check Spelling ....
 """
 
 
-    I_CUD_NT = """ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ {}.
-ᴘʟᴇᴀꜱᴇ ᴄʜᴇᴄᴋ ᴛʜᴇ ꜱᴘᴇʟʟɪɴɢ ᴏɴ ɢᴏᴏɢʟᴇ ᴏʀ ɪᴍᴅʙ...
+    I_CUD_NT = """Not Found Anything Related To {}
+
+Please Check The Title Is Digitally Released Or Check Spelling ....
 """
 
     MVE_NT_FND = """ {} Is Not Available On 𝐭𝐡𝐞𝐟𝐢𝐥𝐦𝐲𝐬𝐩𝐨𝐭 Database...
@@ -146,7 +150,7 @@ THANKS FOR JOINING &
 
 Movie : Kgf Chapter 2 2022 Tamil
 Series : Breaking Bad s01e14
-🚯 Never Use These╭⁠☞ ':(!,./)"""
+🚯 Never Use These Any Symbols !"""
 
     RESTART_TXT = """
 
