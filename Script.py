@@ -98,24 +98,25 @@ This Is Your Old/Expired Request ,
 Please Request Again 🙏🏼.
 """
 
-    CUDNT_FND = """ Not Found Anything Related To {}
+    CUDNT_FND = """ Not Found Anything Related To 
+{}
 Please Check The Spelling On Google ....
 Choose Any Suggested Title Listed Below ! 👇🏼
 """
 
 
-    I_CUDNT = """Not Found Anything Related To {}
-
+    I_CUDNT = """Not Found Anything Related To 
+{}
 Please Check The Title Is Digitally Released Or Check Spelling ....
 """
 
 
-    I_CUD_NT = """Not Found Anything Related To {}
-
+    I_CUD_NT = """Not Found Anything Related To
+{}
 Please Check The Title Is Digitally Released Or Check Spelling ....
 """
 
-    MVE_NT_FND = """ {} Is Not Available On 𝐭𝐡𝐞𝐟𝐢𝐥𝐦𝐲𝐬𝐩𝐨𝐭 Database...
+    MVE_NT_FND = """ This Movie/Series Is Not Available On Our Database...
 Please Check The Title Is Digitally Released Or Check Spelling....
 """
 
@@ -140,7 +141,7 @@ THANKS FOR JOINING &
     REQINFO = """
 ⚠ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ⚠
  • Request Admin For a File Not Available, Join @thefilmyspotsupport Group & Request With ▶️ #request <Movie Name>◀️ 
- • Also Check Next Page Below To Find The File You Looking For """
+ • Also Check Next Page Below To Find The File You Looking For ! """
 
     MINFO = """
 ⚪ REQUESTING FORMAT ⚪
