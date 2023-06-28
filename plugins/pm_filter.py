@@ -269,7 +269,7 @@ async def next_page(bot, query):
                     ],
                 )
     btn.insert(0, [ 
-         InlineKeyboardButton("Choose Lᴀɴɢᴜᴀɢᴇs 🔊 !", callback_data=f"select_lang#{req}") 
+         InlineKeyboardButton("🆕 Choose Lᴀɴɢᴜᴀɢᴇs 🔊 ", callback_data=f"select_lang#{req}") 
      ])
     btn.insert(0, [
         InlineKeyboardButton("CHECK BOT PM HERE🌝👀", url=f"https://t.me/{temp.U_NAME}")
@@ -1607,7 +1607,7 @@ async def auto_filter(client, msg, spoll=False):
                 ]
          )
      btn.insert(0, [ 
-         InlineKeyboardButton(" Lᴀɴɢᴜᴀɢᴇs 🔊 ", callback_data=f"select_lang#{message.from_user.id}") 
+         InlineKeyboardButton("🆕 Choose Lᴀɴɢᴜᴀɢᴇs 🔊", callback_data=f"select_lang#{message.from_user.id}") 
      ]) 
   
      btn.insert(0, [ 
