@@ -70,7 +70,7 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "JOIN OUR UPDATES CHANNEL 📢", url=invite_link.invite_link
+                    "JOIN OUR MOVIE GROUP 🍿", url=invite_link.invite_link
                 )
             ]
         ]
@@ -84,7 +84,7 @@ async def start(client, message):
                 btn.append([InlineKeyboardButton("↻ Tʀʏ Aɢᴀɪɴ", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
-            text="⚠️ You Have To Join Our Updates Channel  For Getting Files From This Bot ⚠️\n\n 📌 Click On ' 🍿JOIN UPDATES CHANNEL🍿 ' Button Below & Join That Channel. \n 📌 Then Click the ' TRY AGAIN 🔄  ' Button Below. \n 📌 After That You Will Get Movie Files You Requested 🤝🏻",
+            text="⚠️ You Have To Join Our Movie Group For Getting Files From This Bot \n\n 📌 Click On ' 🍿JOIN OUR MOVIE GROUP 🍿 ' Button Below & Join That GROUP. \n\n 📌 Then Click the ' TRY AGAIN 🔄  ' Button Below. \n\n 📌 After That You Will Get Movie Files You Requested 🤝🏻",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
             )
