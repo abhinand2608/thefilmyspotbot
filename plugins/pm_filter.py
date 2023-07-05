@@ -62,7 +62,7 @@ async def give_filter(client, message):
             return
         else:
             return await message.reply_text(
-                text=f"<b>Hᴇʏ {message.from_user.mention}, {str(total_results)} ʀᴇsᴜʟᴛs ᴀʀᴇ ғᴏᴜɴᴅ ғᴏʀ {search}. Join @thefilmyspot Group & Request To Get Those Files 🙂🙏🏼</b>",
+                text=f"<b>Hey {message.from_user.mention} \nRequest Name : {search}\nTotal Files Found: {str(total_results)} \nJoin Our Group : https://t.me/thefilmyspot ✅ \nThen Request The File Name In Group To Get Those Files 🙂🙏🏼</b>",
                 parse_mode=enums.ParseMode.HTML
             )
 
