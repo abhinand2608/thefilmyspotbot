@@ -1684,7 +1684,7 @@ async def auto_filter(client, msg, spoll=False):
          cap = f"<b>🏷️ Title : {search} \n\n📍 ReQuested By : {message.from_user.mention}🌝🤍\n\n📌 Choose Suitable Files From Below & Enjoy😌</b>"
      if imdb and imdb.get('poster'): 
          try: 
-             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn)) 
+             hehe = await message.reply_photo(photo=NOR_IMG, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn)) 
              try: 
                  if settings['auto_delete']: 
                      await asyncio.sleep(600) 
@@ -1698,7 +1698,7 @@ async def auto_filter(client, msg, spoll=False):
          except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty): 
              pic = imdb.get('poster') 
              poster = pic.replace('.jpg', "._V1_UX360.jpg") 
-             hmm = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn)) 
+             hmm = await message.reply_photo(photo=NOR_IMG, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn)) 
              try: 
                  if settings['auto_delete']: 
                      await asyncio.sleep(600) 
