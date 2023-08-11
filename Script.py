@@ -192,7 +192,7 @@ Then We aren't Responsible for That ❗
 ========= • ✠ • =========</b>"""
 
     IMDB_TEMPLATE_TXT = """
-✿ <b>🏷 Title</b>: <a href={url}>{title}</a>
+✿ <b>🏷 Title</b>: <a href={url}>{title}</a>  <a href={poster}>🖼️ </a>
 
 ✿ 📆 Year: <a href={url}/release_date>{year}</a>  | ⏳ {runtime} Min
 
@@ -208,9 +208,9 @@ Then We aren't Responsible for That ❗
 
 ✿ 📖 Storyline : {plot}
 
- ⊹ ⊹ ⊹ ⊹ ⊹ ⊹ ⊹ ⊹ ⊹ ⊹ ⊹ ⊹ ⊹ ⊹ ⊹ ⊹ ⊹ ⊹ ⊹ 
+⊚ 🗂️ Total : {total_results} Files
 
-Requested by : {message.from_user.mention} 🌝"""
+🗣️ : {message.from_user.mention} 🌝"""
     
     ALL_FILTERS = """
 <b>Hᴇʏ {}, Tʜᴇsᴇ ᴀʀᴇ ᴍʏ ᴛʜʀᴇᴇ ᴛʏᴘᴇs ᴏғ ғɪʟᴛᴇʀs.</b>"""
