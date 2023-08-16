@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 lock = asyncio.Lock()
 
-EXCLUDED_KEYWORDS = ["predvd", "camrip", "hdcam"]
+EXCLUDED_KEYWORDS = ["predvd", "Predvdrip", "hdcamrip", "apk", "sample", "camrip", "hdcam"]
 
 @Client.on_callback_query(filters.regex(r'^index'))
 async def index_files(bot, query):
