@@ -17,4 +17,7 @@ async def media(bot, message):
 
     media.file_type = file_type
     media.caption = message.caption
-    await save_file(media)
+
+    # Check if the file size is greater than or equal to 40MB (40000000 bytes)
+    if media.file_size and media.file_size >= 40000000:
+        await save_file(media)
