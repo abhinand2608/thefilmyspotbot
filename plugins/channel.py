@@ -4,7 +4,7 @@ from database.ia_filterdb import save_file
 
 media_filter = filters.document | filters.video
 
-EXCLUDED_KEYWORDS = ["predvd", "camrip", "hdcam"]
+EXCLUDED_KEYWORDS = ["predvd", "Predvdrip", "hdcamrip", "apk", "sample", "camrip", "hdcam"]
 
 @Client.on_message(filters.chat(CHANNELS) & media_filter)
 async def media(bot, message):
