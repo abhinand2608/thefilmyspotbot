@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 lock = asyncio.Lock()
 
-EXCLUDED_KEYWORDS = ["predvd", "camrip","Predvdrip", "hdcamrip", "sample", "apk", "hdcam"]
+EXCLUDED_KEYWORDS = ["predvd", "camrip", "hdcam"]
 
 @Client.on_callback_query(filters.regex(r'^index'))
 async def index_files(bot, query):
@@ -171,7 +171,7 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
                 media.file_type = message.media.value
                 media.caption = message.caption
                 for keyword in EXCLUDED_KEYWORDS:
-                    if keyword in media.file_name.lower():
+                    if keyword in media.file_name.lower() or (media.caption and keyword in media.caption.lower()):
                         unsupported += 1
                         continue
                 if media.file_size and media.file_size < 40 * 1024 * 1024:  # Check if file size is less than 40MB
@@ -189,6 +189,3 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
             await msg.edit(f'Error: {e}')
         else:
             await msg.edit(f'Successfully saved <code>{total_files}</code> to the database ✅\nDuplicate Files Skipped: <code>{duplicate}</code>\nDeleted Messages Skipped: <code>{deleted}</code>\nNon-Media messages skipped: <code>{no_media + unsupported}</code>(Unsupported Media - `{unsupported}` )\nErrors Occurred: <code>{errors}</code>')
-
-app = Client("my_bot")
-app.run()
