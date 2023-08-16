@@ -174,7 +174,7 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
                     if keyword in media.file_name.lower() or (media.caption and keyword in media.caption.lower()):
                         unsupported += 1
                         continue
-                if media.file_size and media.file_size < 40 * 1024 * 1024:  # Check if file size is less than 40MB
+                if media.file_size and media.file_size < 35 * 1024 * 1024:  # Check if file size is less than 35MB
                     unsupported += 1
                     continue
                 aynav, vnay = await save_file(media)
