@@ -79,7 +79,7 @@ def msonescrap(query, key):
              return resultlist 
   
 @Client.on_message(filters.command('mal_sub') & filters.incoming) 
- async def msone(client, message): 
+async def msone(client, message): 
      if len(message.command) < 2: 
          return await message.reply('<b>Example:</b>\n<code>/mal_sub Wolf of The Wall Street</code>') 
      res = await message.reply('Searching...', quote=True) 
