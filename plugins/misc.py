@@ -3,6 +3,8 @@ from pyrogram import Client, filters, enums
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from info import IMDB_TEMPLATE
 from utils import extract_user, get_file_id, get_poster, last_online
+import requests 
+import bs4
 import time
 from datetime import datetime
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
@@ -76,7 +78,7 @@ def msonescrap(query, key):
          else: 
              return resultlist 
   
- @Client.on_message(filters.command('mal_sub') & filters.incoming) 
+@Client.on_message(filters.command('mal_sub') & filters.incoming) 
  async def msone(client, message): 
      if len(message.command) < 2: 
          return await message.reply('<b>Example:</b>\n<code>/mal_sub Wolf of The Wall Street</code>') 
