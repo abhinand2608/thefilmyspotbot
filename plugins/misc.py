@@ -78,7 +78,7 @@ def msonescrap(query, key):
          else: 
              return resultlist 
   
-@Client.on_message(filters.command('mal_sub') & filters.incoming) 
+@Client.on_message(filters.command('msub') & filters.incoming) 
 async def msone(client, message): 
      if len(message.command) < 2: 
          return await message.reply('<b>Example:</b>\n<code>/mal_sub Wolf of The Wall Street</code>') 
@@ -103,53 +103,53 @@ async def msone(client, message):
      markup = InlineKeyboardMarkup(buttons) 
      await res.edit('Here is your Request.', reply_markup=markup)
 
-def esubscrap(query, key):  
-      resultlist = []  
-      if " " in query:  
-          query = query.replace(' ', '+')  
-      resp = requests.get('https://opensubtitles.org/?s='+query)  
-      soup = bs4.BeautifulSoup(resp.content, 'html.parser')  
-      if key == 'link':  
-          title_links = soup.find_all('a', class_='entry-title-link')  
-          for links in title_links:  
-              resultlist.append(links['href'])  
-          if not resultlist:  
-              return 'Nothing'  
-          else: return resultlist  
-      elif key == 'title':  
-          total_titles = soup.find_all('a', class_='entry-title-link')  
-          for titles in total_titles:  
-              resultlist.append(titles.get_text())  
-          if not resultlist:  
-              return 'Nothing'  
-          else:  
-              return resultlist  
+def esubscrap(query, key): 
+     resultlist = [] 
+     if " " in query: 
+         query = query.replace(' ', '+') 
+     resp = requests.get('https://opensubtitles.org/?s='+query) 
+     soup = bs4.BeautifulSoup(resp.content, 'html.parser') 
+     if key == 'link': 
+         title_links = soup.find_all('a', class_='entry-title-link') 
+         for links in title_links: 
+             resultlist.append(links['href']) 
+         if not resultlist: 
+             return 'Nothing' 
+         else: return resultlist 
+     elif key == 'title': 
+         total_titles = soup.find_all('a', class_='entry-title-link') 
+         for titles in total_titles: 
+             resultlist.append(titles.get_text()) 
+         if not resultlist: 
+             return 'Nothing' 
+         else: 
+             return resultlist 
   
-@Client.on_message(filters.command('esub') & filters.incoming)  
-async def esub(client, message):  
-     if len(message.command) < 2:  
-         return await message.reply('<b>Example:</b>\n<code>/esub Wolf of The Wall Street</code>')  
-     res = await message.reply('Searching...', quote=True)  
-     cmd = message.text.split(' ', 1)[1]  
-     buttons = []  
-     names = esubscrap(cmd, 'title')  
-     links = esubscrap(cmd, 'link')  
-     if names == 'Nothing' or links == 'Nothing':  
-          return await res.edit('No results found.')  
-      i = 0  
-      bu_list = []  
-      while i < len(names):  
-          if names[i] in bu_list:  
-              i += 1  
-              pass  
-          else:  
-              buttons.append([InlineKeyboardButton(names[i], url= links[i])])  
-              bu_list.append(names[i])  
-              i += 1  
-      buttons.append([InlineKeyboardButton('❌ CLOSE', callback_data='close')])  
-      markup = InlineKeyboardMarkup(buttons)  
-      await res.edit('Here is your Request.', reply_markup=markup) 
- 
+@Client.on_message(filters.command('esub') & filters.incoming) 
+async def esub(client, message): 
+     if len(message.command) < 2: 
+         return await message.reply('<b>Example:</b>\n<code>/esub Bullet Train </code>') 
+     res = await message.reply('Searching...', quote=True) 
+     cmd = message.text.split(' ', 1)[1] 
+     buttons = [] 
+     names = esubscrap(cmd, 'title') 
+     links = esubscrap(cmd, 'link') 
+     if names == 'Nothing' or links == 'Nothing': 
+         return await res.edit('No results found.') 
+     i = 0 
+     bu_list = [] 
+     while i < len(names): 
+         if names[i] in bu_list: 
+             i += 1 
+             pass 
+         else: 
+             buttons.append([InlineKeyboardButton(names[i], url= links[i])]) 
+             bu_list.append(names[i]) 
+             i += 1 
+     buttons.append([InlineKeyboardButton('❌ CLOSE', callback_data='close')]) 
+     markup = InlineKeyboardMarkup(buttons) 
+     await res.edit('Here is your Request.', reply_markup=markup)
+
 
 @Client.on_message(filters.command(["info"]))
 async def who_is(client, message):
