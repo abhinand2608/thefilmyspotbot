@@ -126,15 +126,15 @@ def esubscrap(query, key):
               return resultlist  
   
 @Client.on_message(filters.command('esub') & filters.incoming)  
- async def esub(client, message):  
-      if len(message.command) < 2:  
-          return await message.reply('<b>Example:</b>\n<code>/esub Wolf of The Wall Street</code>')  
-      res = await message.reply('Searching...', quote=True)  
-      cmd = message.text.split(' ', 1)[1]  
-      buttons = []  
-      names = esubscrap(cmd, 'title')  
-      links = esubscrap(cmd, 'link')  
-      if names == 'Nothing' or links == 'Nothing':  
+async def esub(client, message):  
+     if len(message.command) < 2:  
+         return await message.reply('<b>Example:</b>\n<code>/esub Wolf of The Wall Street</code>')  
+     res = await message.reply('Searching...', quote=True)  
+     cmd = message.text.split(' ', 1)[1]  
+     buttons = []  
+     names = esubscrap(cmd, 'title')  
+     links = esubscrap(cmd, 'link')  
+     if names == 'Nothing' or links == 'Nothing':  
           return await res.edit('No results found.')  
       i = 0  
       bu_list = []  
