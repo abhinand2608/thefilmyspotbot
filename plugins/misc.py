@@ -107,7 +107,7 @@ def esubscrap(query, key):
      resultlist = [] 
      if " " in query: 
          query = query.replace(' ', '+') 
-     resp = requests.get('https://opensubtitles.org/?s='+query) 
+     resp = requests.get('https://subscene.com/subtitles/searchbytitle/?s='+query) 
      soup = bs4.BeautifulSoup(resp.content, 'html.parser') 
      if key == 'link': 
          title_links = soup.find_all('a', class_='entry-title-link') 
