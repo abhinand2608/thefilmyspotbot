@@ -1,6 +1,6 @@
 import pymongo
-
-from info import DATABASE_URI, DATABASE_NAME
+from sample_info import tempDict
+from info import DATABASE_URI, DATABASE_NAME, SECONDDB_URI
 
 import logging
 logger = logging.getLogger(__name__)
@@ -8,8 +8,11 @@ logger.setLevel(logging.ERROR)
 
 myclient = pymongo.MongoClient(DATABASE_URI)
 mydb = myclient[DATABASE_NAME]
-mycol = mydb['CONNECTION']   
+mycol = mydb['CONNECTION']
 
+myclient2 = pymongo.MongoClient(SECONDDB_URI)
+mydb2 = myclient2[DATABASE_NAME]
+mycol2 = mydb2['CONNECTION']
 
 async def add_connection(group_id, user_id):
     query = mycol.find_one(
