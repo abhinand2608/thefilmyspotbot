@@ -3,7 +3,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQ
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInvalid
 from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, MELCOW_NEW_USERS, MELCOW_VID, CHNL_LNK, GRP_LNK
 from database.users_chats_db import db
-from database.ia_filterdb import Media
+from database.ia_filterdb import Media, Media2,  db as clientDB, db2 as clientDB2
 from utils import get_size, temp, get_settings
 from Script import script
 from pyrogram.errors import ChatAdminRequired
@@ -160,14 +160,22 @@ async def re_enable_chat(bot, message):
 @Client.on_message(filters.command('stats') & filters.incoming)
 async def get_ststs(bot, message):
     rju = await message.reply('Fetching stats..')
+    #users and chats
     total_users = await db.total_users_count()
     totl_chats = await db.total_chat_count()
-    files = await Media.count_documents()
-    size = await db.get_db_size()
-    free = 536870912 - size
-    size = get_size(size)
-    free = get_size(free)
-    await rju.edit(script.STATUS_TXT.format(files, total_users, totl_chats, size, free))
+    #primary db
+    filesp = await Media.count_documents()
+    #secondary db
+    totalsec = await Media2.count_documents()
+    #primary
+    stats = await clientDB.command('dbStats')
+    used_dbSize = (stats['dataSize']/(1024*1024))+(stats['indexSize']/(1024*1024))
+    free_dbSize = 512-used_dbSize
+    #secondary
+    stats2 = await clientDB2.command('dbStats')
+    used_dbSize2 = (stats2['dataSize']/(1024*1024))+(stats2['indexSize']/(1024*1024))
+    free_dbSize2 = 512-used_dbSize2
+    await rju.edit(script.STATUS_TXT.format((int(filesp)+int(totalsec)), total_users, totl_chats, filesp, round(used_dbSize, 2), round(free_dbSize, 2), totalsec, round(used_dbSize2, 2), round(free_dbSize2, 2)))
 
 
 @Client.on_message(filters.command('invite') & filters.user(ADMINS))
