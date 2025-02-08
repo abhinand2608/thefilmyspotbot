@@ -178,7 +178,7 @@ Series : Breaking Bad s01e14
 <b>
 ╭─────── • ◆ • ───────╮
 
-➠ <a href="https://t.me/+8lZE1YYLDqdjZTc1">Join 𝐭𝐡𝐞𝐟𝐢𝐥𝐦𝐲𝐬𝐩𝐨𝐭 💎 
+➠ <a href="https://t.me/+aT55PxDdIbsyZjll">Join 𝐭𝐡𝐞𝐟𝐢𝐥𝐦𝐲𝐬𝐩𝐨𝐭 💎 
 For All Movies & Series Files ✅ </a>
 
 ╰─────── • ◆ • ───────╯
@@ -192,7 +192,7 @@ Then We aren't Responsible for That ❗
 ========= • ✠ • =========</b>"""
 
     IMDB_TEMPLATE_TXT = """
-✿ <b>🏷 Title</b>: <a href={url}>{title}</a>  <a href={poster}>🖼️ </a>
+✿ <b>🏷 Title</b>: <a href={url}>{title}</a>  
 
 ✿ 📆 Year: <a href={url}/release_date>{year}</a>  | ⏳ {runtime} Min
 
@@ -208,7 +208,7 @@ Then We aren't Responsible for That ❗
 
 ✿ 📖 Storyline : {plot}
 
-⊚ 🗂️ Total : {total_results} Files
+<a href={poster}>Click here for Posters</a>
 
 🗣️ : {message.from_user.mention} 🌝"""
     
