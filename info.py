@@ -46,7 +46,7 @@ PM_LOG = int(pm_log) if pm_log and id_pattern.search(pm_log) else None
 # MongoDB information
 DATABASE_URI = environ.get('DATABASE_URI', "")
 DATABASE_NAME = environ.get('DATABASE_NAME', "𝐭𝐡𝐞𝐟𝐢𝐥𝐦𝐲𝐬𝐩𝐨𝐭")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'tfs_files')
 
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
