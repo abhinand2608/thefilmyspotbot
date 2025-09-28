@@ -1,6 +1,6 @@
 import pymongo
-
-from info import DATABASE_URI, DATABASE_NAME
+from sample_info import tempDict
+from info import DATABASE_URI, DATABASE_NAME, SECONDDB_URI
 
 import logging
 logger = logging.getLogger(__name__)
@@ -8,8 +8,11 @@ logger.setLevel(logging.ERROR)
 
 myclient = pymongo.MongoClient(DATABASE_URI)
 mydb = myclient[DATABASE_NAME]
-mycol = mydb['CONNECTION']   
+mycol = mydb['CONNECTION']
 
+myclient2 = pymongo.MongoClient(SECONDDB_URI)
+mydb2 = myclient2[DATABASE_NAME]
+mycol2 = mydb2['CONNECTION']
 
 async def add_connection(group_id, user_id):
     query = mycol.find_one(
@@ -31,23 +34,37 @@ async def add_connection(group_id, user_id):
         'active_group' : group_id,
     }
 
-    if mycol.count_documents( {"_id": user_id} ) == 0:
+    if mycol.count_documents( {"_id": user_id} ) == 0 and mycol2.count_documents( {"_id": user_id} ) == 0:
         try:
-            mycol.insert_one(data)
-            return True
+            if tempDict['indexDB'] == DATABASE_URI:
+                mycol.insert_one(data)
+                return True
+            else:
+                mycol2.insert_one(data)
+                return True
         except:
             logger.exception('Some error occurred!', exc_info=True)
 
     else:
         try:
-            mycol.update_one(
-                {'_id': user_id},
-                {
-                    "$push": {"group_details": group_details},
-                    "$set": {"active_group" : group_id}
-                }
-            )
-            return True
+            if mycol.count_documents( {"_id": user_id} ) == 0:
+                mycol2.update_one(
+                    {'_id': user_id},
+                    {
+                        "$push": {"group_details": group_details},
+                        "$set": {"active_group" : group_id}
+                    }
+                )
+                return True
+            else:
+                mycol.update_one(
+                    {'_id': user_id},
+                    {
+                        "$push": {"group_details": group_details},
+                        "$set": {"active_group" : group_id}
+                    }
+                )
+                return True
         except:
             logger.exception('Some error occurred!', exc_info=True)
 
@@ -58,7 +75,12 @@ async def active_connection(user_id):
         { "_id": user_id },
         { "_id": 0, "group_details": 0 }
     )
-    if not query:
+    query2 = mycol2.find_one(
+        { "_id": user_id },
+        { "_id": 0, "group_details": 0 }
+    )
+    if not query and not query2:
+        return None
         return None
 
     group_id = query['active_group']
